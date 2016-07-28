@@ -3,31 +3,50 @@
   <title>TicTacToe</title>
   <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <script type="text/javascript" src = "logic.js"></script>
+
+
   <link rel="stylesheet" href="lib/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/material-kit.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-      <div class="row title">
-        <h1 class="text-center"><b>TIC TAC TOE</b></h1>
-      </div>
+  <div class="row title">
+    <h1 class="text-center"><b>TIC TAC TOE</b></h1>
+  </div>
+  <div class="choose container">
+    <h2 class="text-center"><b><u>Choose a side</u></b></h2>
+    <div class="col-xs-2 col-xs-offset-4">
+      <h4 class="text-center">
+        <button class="btn btn-lg " id ="X"><h2>X</h2></button>
+      </h4>
+
+    </div>
+    <div class="col-xs-2 ">
+      <h4 class="text-center">
+        <button class="btn btn-lg " id="O"><h2>O</h2></button>
+      </h4>
+
+    </div>
+  </div>
+
+  <div class="container game">
+      <h2 class="text-center " id="mesaj"><u>Make a move</u></h2>
       <div class="row">
-        <div class="col-xs-4 col-sm-2 col-sm-offset-3 box-game border-right border-bottom"><h1 class="text-center"></h1></div>
-        <div class="col-xs-4 col-sm-2 box-game border-bottom"><h1 class="text-center"></h1></div>
-        <div class="col-xs-4 col-sm-2 box-game border-left border-bottom"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 col-sm-offset-3 box-game border-right border-bottom" id="1"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 box-game border-bottom" id="2"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 box-game border-left border-bottom" id="3"><h1 class="text-center"></h1></div>
       </div>
 
       <div class="row">
-        <div class="col-xs-4 col-sm-2 col-sm-offset-3 box-game border-right border-top border-bottom"><h1 class="text-center"></h1></div>
-        <div class="col-xs-4 col-sm-2 box-game border-top border-bottom"><h1 class="text-center" ></h1></div>
-        <div class="col-xs-4 col-sm-2 box-game border-left border-top border-bottom"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 col-sm-offset-3 box-game border-right border-top border-bottom " id="4"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 box-game border-top border-bottom" id="5"><h1 class="text-center" ></h1></div>
+        <div class="col-xs-4 col-sm-2 box-game border-left border-top border-bottom" id="6"><h1 class="text-center"></h1></div>
       </div>
 
       <div class="row">
-        <div class="col-xs-4 col-sm-2 col-sm-offset-3 box-game border-right border-top"><h1 class="text-center"></h1></div>
-        <div class="col-xs-4 col-sm-2 box-game border-top"><h1 class="text-center"></h1></div>
-        <div class="col-xs-4 col-sm-2 box-game border-left border-top"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 col-sm-offset-3 box-game border-right border-top" id="7"><h1 class="text-center"></h1></div>
+        <div class="col-xs-4 col-sm-2 box-game border-top" id="8"><h1 class="text-center" ></h1></div>
+        <div class="col-xs-4 col-sm-2 box-game border-left border-top" id="9"><h1 class="text-center"></h1></div>
       </div>
   </div>
 </body>

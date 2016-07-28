@@ -37,3 +37,9 @@ body {
 .border-bottom{
   border-bottom: 5px solid white;
 }
+.game{
+  display: none;
+}
+.box-game{
+  padding-top:13px;
+}
