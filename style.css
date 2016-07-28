@@ -1,0 +1,39 @@
+/* FOOTER CSS*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  color :black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+/* END FOOTER CSS*/
+.box-game{
+  background-color: rgb(76, 85, 77);
+  color :white;
+  min-height: 8em;
+}
+.title{
+  margin-bottom: 40px;
+}
+.border-right{
+  border-right:10px solid white;
+}
+.border-left{
+  border-left:10px solid white;
+}
+.border-top{
+  border-top: 5px solid white;
+}
+.border-bottom{
+  border-bottom: 5px solid white;
+}
