@@ -1,7 +1,9 @@
 $( document ).ready(function() {
 
     var table = [ [], [], [] ];
-
+    var tableConverter = [[1,2,3],
+                          [4,5,6],
+                          [7,8,9]];
     var state ;
     var jucator;
     var ai;
@@ -29,17 +31,34 @@ $( document ).ready(function() {
       if($('#'+id+'>h1').text()==''){
         placeElement(id,jucator);
         AiMove();
-        console.log(checkDiagonally());
+
 
       }
 
     })
 
     function AiMove() {
+      var posToBlock = checkToBlock();
 
+      if (posToBlock !=undefined){
+        var AiId = tableConverter[posToBlock[0]][posToBlock[1]];
+        AiId = AiId.toString();
+        placeElement(AiId,ai);
+
+      }
+      console.log(table[0][2]);
     }
     function checkToBlock() {
-
+      var check1 = checkHorizontally();
+      var check2 = checkVertically();
+      var check3 = checkDiagonally();
+      if (check1 !=undefined){
+        return check1;
+      }else if(check2 != undefined){
+        return check2;
+      }else {
+        return check3;
+      }
     }
     function checkHorizontally() {
       for (var i = 0 ; i <3 ; i++){
@@ -125,6 +144,7 @@ $( document ).ready(function() {
       return undefined;
     }
 
+
     function placeElement(id,who) {
       switch (id) {
         case '1': table[0][0] = who; break;
@@ -136,6 +156,7 @@ $( document ).ready(function() {
         case '7': table[2][0] = who; break;
         case '8': table[2][1] = who; break;
         case '9': table[2][2] = who; break;
+
       }
       $('#'+id+'>h1').text(who);
     }
