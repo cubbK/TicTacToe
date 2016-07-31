@@ -86,11 +86,41 @@ $( document ).ready(function() {
     }
     function checkDiagonally() {
       //check diagonala principala
-      
+      var countPrincipal = 0;
+      for (var i = 0;i <3 ;i++){
+        if (table[i][i] ==jucator){
+          countPrincipal++;
+        }
+        if (countPrincipal ==2){
+          for (var j = 0;j<3;j++){
+            if (table[j][j] == undefined){
+              var pos = [j,j];
+              return pos;
+            }
+          }
+        }
+      }
       //end check diagonala principala
 
       //check diagonala secundara
-
+      var countSecundar = 0;
+      var j = 2;
+      for (var i = 0 ; i <3;i++){
+        if (table[i][j] == jucator){
+          countSecundar++;
+        }
+        j--;
+        if (countSecundar ==2) {
+          j = 2;
+          for (var i = 0;i<3;i++){
+            if (table[i][j] == undefined){
+              var pos = [i,j];
+              return pos;
+            }
+            j--;
+          }
+        }
+      }
       //end check diagonala ssecundara
       return undefined;
     }
