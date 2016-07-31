@@ -58,7 +58,7 @@ $( document ).ready(function() {
         cornerId = cornerId.toString();
         placeElement(cornerId,ai);
       }else if(table[1][1] == undefined) {
-        placeElement(5,ai);
+        placeElement('5',ai);
       }else if (returnNonCorner() != undefined){
         var nonCorner = returnNonCorner();
         var nonCornerId = tableConverter[nonCorner[0]][nonCorner[1]];
