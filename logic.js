@@ -45,6 +45,8 @@ $( document ).ready(function() {
         var posId = tableConverter[posToWin[0]][posToWin[1]];
         posId = posId.toString();
         placeElement(posId,ai);
+        alert('You Lost');
+        backToZero();
       }else if (posToBlock !=undefined){
         var AiId = tableConverter[posToBlock[0]][posToBlock[1]];
         AiId = AiId.toString();
@@ -62,6 +64,8 @@ $( document ).ready(function() {
         placeElement(nonCornerId,ai);
       }else {
         console.log('Gata');
+        alert('Tie');
+        backToZero();
       }
 
     }
@@ -186,6 +190,12 @@ $( document ).ready(function() {
       return choosenNonCorner;
     }
 
+    function backToZero() {
+      table = [ [], [], [] ];
+      for (var i = 1 ; i <=9;i++){
+        $('#'+i+'>h1').text('');
+      }
+    }
 
     function placeElement(id,who) {
       switch (id) {
