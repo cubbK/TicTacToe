@@ -23,11 +23,13 @@ $( document ).ready(function() {
         ai = 'X';
         //AiMoveFirst
       }
+      firstAiMove();
     });
     //end choose part
 
     $('.box-game').click(function () {
       var id = this.id;
+      console.log(table);
       if($('#'+id+'>h1').text()==''){
         placeElement(id,jucator);
         AiMove();
@@ -42,30 +44,35 @@ $( document ).ready(function() {
       var posToWin = checkTwoBlocks(ai);
 
       if (posToWin !=undefined){
+        console.log('1');
         var posId = tableConverter[posToWin[0]][posToWin[1]];
         posId = posId.toString();
         placeElement(posId,ai);
         alert('You Lost');
         backToZero();
       }else if (posToBlock !=undefined){
+        console.log('2');
         var AiId = tableConverter[posToBlock[0]][posToBlock[1]];
         AiId = AiId.toString();
         placeElement(AiId,ai);
 
       }else if(table[1][1] == undefined) {
+        console.log('3');
         placeElement('5',ai);
       }else if (returnCorner() != undefined){
+        console.log('4');
         var corner = returnCorner();
         var cornerId = tableConverter[corner[0]][corner[1]];
         cornerId = cornerId.toString();
         placeElement(cornerId,ai);
       }else if (returnNonCorner() != undefined){
+        console.log('5');
         var nonCorner = returnNonCorner();
         var nonCornerId = tableConverter[nonCorner[0]][nonCorner[1]];
         nonCornerId = nonCornerId.toString();
         placeElement(nonCornerId,ai);
-      }else {
-        console.log('Gata');
+      }
+      if (checkIfTableFull()){
         alert('Tie');
         backToZero();
       }
@@ -197,8 +204,14 @@ $( document ).ready(function() {
       for (var i = 1 ; i <=9;i++){
         $('#'+i+'>h1').text('');
       }
+      firstAiMove();
     }
+    function firstAiMove() {
+      var firstBlock = Math.floor(Math.random() * (10 - 1)) + 1;
+      firstBlock = firstBlock.toString();
 
+      placeElement(firstBlock,ai);
+    }
     function placeElement(id,who) {
       switch (id) {
         case '1': table[0][0] = who; break;
@@ -214,7 +227,16 @@ $( document ).ready(function() {
       }
       $('#'+id+'>h1').text(who);
     }
-
+    function checkIfTableFull() {
+      for (var i = 0 ; i <3 ;i++){
+        for (var j = 0; j <3 ;j++){
+          if (table[i][j] == undefined){
+            return false;
+          }
+        }
+      }
+      return true;
+    }
 
 });
 // prototype def
